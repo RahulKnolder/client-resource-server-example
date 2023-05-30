@@ -5,14 +5,24 @@ import com.knoldus.resourcesercer.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
+   static List<Employee> employees=new ArrayList<>();
+
+    static {
+
+        employees.add(new Employee(1L,"Rhaul","knoldus"));
+
+    }
     @Autowired
     EmployeRepository employeRepository;
     @Override
     public List<Employee> getEmployeeAll() {
-        return employeRepository.findAll();
+        return employees;
+//        return employeRepository.findAll();
     }
 
     @Override

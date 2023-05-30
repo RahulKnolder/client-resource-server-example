@@ -6,12 +6,14 @@ import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Transactional
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Employee {
     @Id
     Long id;
